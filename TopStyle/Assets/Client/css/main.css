@@ -1,0 +1,388 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    color: #f2f5f7;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+body {
+    overflow-x: hidden;
+    
+}
+
+nav {
+    height: 4.5rem;
+    width: 100vw;
+    background-image: radial-gradient( circle farthest-corner at 22.4% 21.7%, rgba(4,189,228,1) 0%, rgba(2,83,185,1) 100.2% );
+    display: flex;
+    position: fixed;
+    z-index: 0;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/*Styling logo*/
+.logo {
+    padding: 1vh 1vw;
+    text-align: center;
+}
+
+.logo img {
+    height: 5rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links {
+    display: flex;
+    list-style: none;
+    width: 88vw;
+    padding: 0 0.7vw;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    margin: 0 0.7vw;
+}
+
+.nav-links li a:hover {
+    color: #61DAFB;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a:hover::before {
+    width: 80%;
+}
+
+
+/*Styling Buttons*/
+.login-button {
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    margin-left: 2vw;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    color: #131418;
+    background-color: #f2f5f7;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+.join-button {
+    color: #131418;
+    background-color: #61DAFB;
+    border: 1.5px solid #61DAFB;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border: 1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px) {
+nav {
+    position: fixed;
+    z-index: 3;
+}
+
+.hamburger {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 2;
+    transition: all 0.7s ease;
+}
+
+.nav-links {
+    position: fixed;
+    background: #131418;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(50px at 90% -20%);
+    -webkit-clip-path: circle(50px at 90% -10%);
+    transition: all 1s ease-out;
+    pointer-events: none;
+}
+
+.nav-links.open {
+    clip-path: circle(1000px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+    pointer-events: all;
+}
+
+.nav-links li {
+    opacity: 0;
+}
+
+.nav-links li:nth-child(1) {
+    transition: all 0.5s ease 0.2s;
+}
+
+.nav-links li:nth-child(2) {
+    transition: all 0.5s ease 0.4s;
+}
+
+.nav-links li:nth-child(3) {
+    transition: all 0.5s ease 0.6s;
+}
+
+.nav-links li:nth-child(4) {
+    transition: all 0.5s ease 0.7s;
+}
+
+.nav-links li:nth-child(5) {
+    transition: all 0.5s ease 0.8s;
+}
+
+.nav-links li:nth-child(6) {
+    transition: all 0.5s ease 0.9s;
+    margin: 0;
+}
+
+.nav-links li:nth-child(7) {
+    transition: all 0.5s ease 1s;
+    margin: 0;
+}
+
+li.fade {
+opacity: 1;
+}
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1 {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2 {
+    transition: all 0.7s ease;
+    width: 0;
+}
+
+.toggle .line3 {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+/* Footer*/
+.info_section {
+    position: relative;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    margin: 0 45px 45px;
+    margin-top:20px
+}
+
+.info_section .social_container {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.info_section .social_container .social_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.info_section .social_container .social_box a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+}
+
+.info_section .info_form form input {
+    outline: none;
+    width: 100%;
+    padding: 7px 10px;
+}
+
+.info_section .info_form form button {
+    padding: 8px 35px;
+    outline: none;
+    border: none;
+    color: #ffffff;
+    background: #f89cab;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+
+.info_section .row{
+    display:flex;
+}
+
+    .info_section .row > div {
+        margin-top: 25px;
+    }
+
+.info_section a {
+    text-transform: none;
+}
+
+.info_section h6 {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.info_section p {
+    color: #cbc9c9;
+}
+
+.info_section .info_link-box a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.info_section .info_link-box a:hover {
+    color: #ffffff;
+}
+
+.info_section .info_link-box a i {
+    color: #ffffff;
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.info_section .info_link-box a span {
+    color: #cbc9c9;
+}
+
+.info_section .info_link-box a:hover span {
+    color: #ffffff;
+}
+.layout_padding2-top {
+    padding-top: 45px;
+}
+.slider_section .slider_container {
+    color: #fefefe;
+    background-color: #43c7c3;
+    padding: 25px;
+    border-radius: 0 0 15px 15px;
+}
+
+.slider_section .row {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.slider_section .img-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 45px;
+}
+
+.slider_section .detail-box {
+    padding-left: 45px;
+    margin: 45px 0;
+}
+ 
+.slider_section .detail-box h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+}
+
+.slider_section .detail-box a {
+    display: inline-block;
+    padding: 10px 40px;
+    background-color: #db4566;
+    color: #ffffff;
+    border: 1px solid #db4566;
+    border-radius: 5px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin-top: 25px;
+    text-transform: uppercase;
+}
+
+.slider_section .detail-box a:hover {
+    background-color: transparent;
+    color: #db4566;
+}
+
+.slider_section .carousel_btn-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #ffffff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    bottom: -25px;
+    left: 5%;
+    padding: 7px 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+.slider_section .carousel_btn-box img {
+    margin: 0 10px;
+}
+
+.slider_section .carousel_btn-box .carousel-control-prev,
+.slider_section .carousel_btn-box .carousel-control-next {
+    height: 25px;
+    width: 25px;
+    background-repeat: no-repeat;
+    opacity: 1;
+    background-position: center;
+    color: #000000;
+    font-size: 14px;
+}
+.top-footer {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
